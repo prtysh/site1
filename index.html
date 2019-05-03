@@ -21,12 +21,18 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<h1> he\\o</h1>
+					<div class="typed-strings">
+						<p>Typed.js is a <strong>JavaScript</strong> library.</p>
+						<p>It <em>types</em> out sentences.</p>
+					</div>
+					<span class="typed"></span>
 				</section>
 <!-- slide 2: open API -->
 				<section>
@@ -247,7 +253,7 @@
 		</div>
 
 		<script src="js/reveal.js"></script>
-
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 		<script>
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
@@ -261,5 +267,28 @@
 				]
 			});
 		</script>
+		<script>
+		import Typed from 'typed.js';
+
+			var options = {
+			strings: ["<i>First</i> sentence.", "&amp; a second sentence."],
+			typeSpeed: 5
+			}
+
+			var typed = new Typed(".element", options);
+		</script>
+		<script>
+			var typed = new Typed('.typed', {
+			  stringsElement: '.typed-strings'
+			});
+		</script>
+		<script>
+			var typed2 = new Typed('#typed2', {
+			strings: ['npm install^1000\n `installing components...` ^1000\n `Fetching from source...`'],
+			typeSpeed: 40,
+			backSpeed: 0,
+			loop: true
+  			});
+    	</script>
 	</body>
 </html>
